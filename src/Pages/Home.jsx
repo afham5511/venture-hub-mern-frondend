@@ -30,11 +30,12 @@ function Home() {
                             <h2 style={{ color: "black", marginLeft: "20px" , paddingTop:"100px" }}>Explore a selection of our<br></br>
                                 wardrobe essentials...</h2><br></br>
                         </div>
-
+                        <CatrgoryComp dics={'Loafers'} imageUrl={'https://i.postimg.cc/kgKz7SRG/dgf.jpg'} title={'Intensified suede, utmost supplesness.'} />
                         <CatrgoryComp dics={'Trousers'} imageUrl={'https://i.postimg.cc/vHgk6NVX/pixelcut-export-1.jpg'} title={'A powerful silhouette and yet, they wear like pajama s.'} />
-                        <CatrgoryComp dics={'T-Shirts'} imageUrl={'https://i.pinimg.com/originals/19/19/15/191915c8aab1dcf71bb41312c1ba9c53.jpg'} title={'Built for the long haul.'} />
-                        <CatrgoryComp dics={'Loafers'} imageUrl={'https://imgs.search.brave.com/dIbG1KKgbJgSs9rIiY5LsBQN45smqvVqyKw4jLl0C1w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tb3Jq/YXMuY2VudHJhY2Ru/Lm5ldC9jZG4tY2dp/L2ltYWdlL2Zvcm1h/dD13ZWJwLHdpZHRo/PTE5MjAscT03NS9j/bGllbnQvZHluYW1p/Yy9pbWFnZXMvMzQy/MF9iYTVhODQxNzFl/LXRoZS1pdnktbG9h/ZmVyLWJsYWNrLWNh/bGYtMi1zaXplMTky/MC5qcGc'} title={'Intensified suede, utmost supplesness.'} />
-                        <CatrgoryComp  dics={'Sneakers'} imageUrl={'https://p3.aprimocdn.net/ecco/fcd7336d-68eb-462f-a282-b0c400b772a4/856813-51052-o_eCom.png?format=auto&width=634&quality=95'}  title={'dfSneakers made like shoes.'}/>
+                       
+                        <CatrgoryComp dics={'T-Shirts'} imageUrl={'https://i.postimg.cc/fLtxhckg/pixelcut-export-6.jpg'} title={'Built for the long haul.'} />
+                     
+                        <CatrgoryComp  dics={'Sneakers'} imageUrl={'https://i.postimg.cc/XvLht0tY/pixelcut-export-5.jpg'}  title={'dfSneakers made like shoes.'}/>
                       
                         <div style={{ textAlign:"center" }}>
                             <br></br><br></br><br></br>  <br></br><br></br><br></br>
