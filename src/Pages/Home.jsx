@@ -17,7 +17,6 @@ function Home() {
                                 <div style={{ fontSize: "35px", fontFamily: 'monospace' }}>Live: Final Sale.</div>
                                 <div className='a'>Wardrobe Essential with endless comfort.</div><br></br>
                                 <div className='b' style={{ color: "black" }}><a href="" ><u>shop now.</u></a></div>
-FDU
                             </h2><br></br>
 
 
