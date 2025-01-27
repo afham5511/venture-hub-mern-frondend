@@ -1,21 +1,29 @@
+import axios from 'axios';
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
-// Creating the AuthContext
 const AuthContext = createContext();
 
-// Creating the AuthProvider component
+// Create an axios instance
+const axiosInstance = axios.create({
+  baseURL: 'http://localhost:3000/api',
+  timeout: 10000, 
+});
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  useEffect(()=>{
-    async()=>{
-        const user = await localStorage.getItem('@Auth')
-        setUser(user)
-    }
-  },[])
+  useEffect(() => {
+    const fetchUser = async () => {
+      const user = await localStorage.getItem('@Auth');
+      if (user) {
+        setUser(JSON.parse(user));
+      }
+    };
+    fetchUser();
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
+    <AuthContext.Provider value={{ user, setUser, axiosInstance }}>
       {children}
     </AuthContext.Provider>
   );

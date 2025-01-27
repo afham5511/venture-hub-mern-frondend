@@ -1,9 +1,32 @@
 import { Button, TextField } from '@mui/material';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
 import Navbar1 from '../components/Navbar1';
+import { useAuth } from '../Contexts/AuthContext';
 
 const Login = () => {
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [password, setpassword] = useState('')
+  const [loading, setloading] = useState(false)
+  const {setUser, axiosInstance } = useAuth()
+  const handleLogin =async ()=>{
+    try {
+      setloading(true)
+      await axiosInstance.post('/auth/login',{
+        phoneNumber, password
+      }).then(async({data})=>{
+        alert(data.message)
+        if(data.user){
+          await localStorage.setItem('@Auth',JSON.stringify(data.user))
+          setUser(data.user)
+          window.location.href = '/';
+        }
+      })
+    } catch (error) {
+      alert("unable to login, please try again")
+    }
+    setloading(false)
+  }
   return (
 
     <div className='container'>
@@ -13,9 +36,9 @@ const Login = () => {
         <div style={{width:'30vw'}}>
           <h1>LOGIN</h1>
           <br /><br />
-          <TextField variant='outlined' label="PHONE NUMBER" style={{ backgroundColor: "white", borderRadius: "10px", fontFamily: "cursive" }} /> <br /><br />
-          <TextField variant='outlined' label="PASSWORD" style={{ backgroundColor: "white", borderRadius: "10px", fontFamily: "cursive" }} /><br /><br /><br />
-          <Button variant='contained' style={{ backgroundColor: "black", color: "#ffffff" }}>LOGIN</Button><br /><br />
+          <TextField variant='outlined' value={phoneNumber} onChange={(e)=>setPhoneNumber(e.target.value)} label="PHONE NUMBER" style={{ backgroundColor: "white", borderRadius: "10px", fontFamily: "cursive" }} /> <br /><br />
+          <TextField variant='outlined' value={password} onChange={(e)=>setpassword(e.target.value)}  label="PASSWORD" style={{ backgroundColor: "white", borderRadius: "10px", fontFamily: "cursive" }} /><br /><br /><br />
+          <Button variant='contained' onClick={handleLogin} style={{ backgroundColor: "black", color: "#ffffff" }}>{loading?"loading..":'LOGIN'}</Button><br /><br />
         </div>
         <div >
           <img src="https://i.postimg.cc/xT9KVDT4/pixelcut-export.jpg" width='150%' />
