@@ -18,8 +18,6 @@ function Home() {
                                 <div className='a'>Wardrobe Essential with endless comfort.</div><br></br>
                                 <div className='b' style={{ color: "black" }}><a href="" ><u>shop now.</u></a></div>
                             </h2><br></br>
-
-
                             <div style={{ width: "100vw",paddingBottom:"50px" }} >
                                 <img src="https://i.postimg.cc/xT9KVDT4/pixelcut-export.jpg"  width="50%" />
                                 <br /><br /><br /><br /><br /><br /><br />
