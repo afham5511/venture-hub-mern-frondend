@@ -5,6 +5,7 @@ import Home from './Pages/Home';
 import Sign from './Pages/sign';
 import Product from './Pages/Product';
 import Checkout from './Pages/Checkout';
+import Cart from './Pages/Cart';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
             <Route path='/product/:id' element={<Product/>} />
             <Route path="/Sign" element={<Sign />} />
             <Route path="/checkout" element={<Checkout/>}/>
+            <Route path="/Cart" element={<Cart/>}/>
           </Routes>
         </BrowserRouter>
       );

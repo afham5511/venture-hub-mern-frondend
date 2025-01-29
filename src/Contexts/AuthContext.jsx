@@ -3,7 +3,6 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const AuthContext = createContext();
 
-// Create an axios instance
 const axiosInstance = axios.create({
   baseURL: 'http://localhost:3000/api',
   timeout: 10000, 
@@ -29,7 +28,7 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the AuthContext
+
 export const useAuth = () => {
   return useContext(AuthContext);
 };

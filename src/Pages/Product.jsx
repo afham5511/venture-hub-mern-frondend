@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import React, { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import CatrgoryComp from '../components/CatrgoryComp';
 import Navbar1 from '../components/Navbar1';
 
@@ -41,22 +41,23 @@ function Product() {
                     <p>Final Sale {`${Math.round((1 - product.price / product.strikeprice) * 100)}%`} OFF.</p>
                     </div>
                     <br></br>
-                    <Button variant='contained' style={{ backgroundColor: "black", color: "#ffffff" }}>
+                    <Button variant='contained' style={{ backgroundColor: "black", color: "#ffffff" }} >
                         Add to cart
                     </Button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Button variant='contained' style={{ backgroundColor: "black", color: "#ffffff" }} onClick={()=>(window.location.href='/Checkout')}>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Button variant='contained' style={{ backgroundColor: "black", color: "#ffffff" }} onClick={()=>(window.location.href='/Checkout')}>
                         Buy Now
                     </Button>
                     <p><b>Free and Fast Delivery</b><br/>
                     Orders placed before 23:30 are shipped the same<br/>
                          day.Enjoy free shipping in all orders above ₹2,500 in<br/>
-                          india. </p>
+                          
+                    india. </p>
                           
                           <p><b>Easy Returns and Exchanges</b><br/>
                     All orders can easly be returned or exchanged for a<br/>
                          diffrent size,color or model within 14 days through<br/>
                           our return portal.</p>
+
 
                 </div>
             </div>
