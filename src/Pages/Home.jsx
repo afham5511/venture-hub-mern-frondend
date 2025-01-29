@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/NavBar';
 import CatrgoryComp from '../components/CatrgoryComp';
 
+
 function Home() {
     return (
 
@@ -9,7 +10,10 @@ function Home() {
             <body>
                 <>
                     <div>
+                    
                         <Navbar />
+                   
+                    
                         <br /><br />
 
                         <div style={{ backgroundColor: "white", float: "right" }}>
