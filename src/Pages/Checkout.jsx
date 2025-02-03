@@ -54,7 +54,7 @@ function Checkout() {
 </div>
 
 
-  <div style={{float:"left",float:"top"}}>
+  <div style={{float:"left,top"}}>
   <form>
   <input type='radio' id='UPI'
   name='payment-method' value='UPI'/>
