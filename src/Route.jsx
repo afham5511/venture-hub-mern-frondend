@@ -9,6 +9,7 @@ import Cart from './Pages/Cart';
 import Adminhome from './Pages/admin/Adminhome';
 import Order from './Pages/admin/Order';
 import User from './Pages/admin/User';
+import Catogory from './Pages/Catogory';
 
 function App() {
     return (
@@ -16,10 +17,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path='/product/:id' element={<Product/>} />
+            <Route path='/catogory/:catogoryId/product/:id' element={<Product/>} />
             <Route path="/Sign" element={<Sign />} />
             <Route path="/checkout" element={<Checkout/>}/>
             <Route path="/Cart" element={<Cart/>}/>
+            <Route path="/catogory/:id" element={<Catogory/>}/>
 
 
 

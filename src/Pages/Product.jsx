@@ -5,7 +5,7 @@ import CatrgoryComp from '../components/CatrgoryComp';
 import Navbar1 from '../components/Navbar1';
 
 function Product() {
-    const { id } = useParams()
+    const { id, catogoryId } = useParams()
     const [product, setproduct] = useState({ title: 'NIKE SB Dunk Low London', strikeprice: 12960, description: 'Soft Grey Magnet', price: 9695, imageUrl1: 'https://i.postimg.cc/FFqVNWz4/pixelcut-export-8.jpg', imageUrl2: 'https://i.postimg.cc/Nj6mw2gc/pixelcut-export-9.jpg', imageUrl3: 'https://i.postimg.cc/c1w65g0M/pixelcut-export-10.jpg' })
     console.log(id);
 
