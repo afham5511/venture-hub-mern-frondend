@@ -79,6 +79,8 @@ const Home = () => {
   };
 
   return (
+    <div>
+      <Navbar2></Navbar2>
     <Container maxWidth="lg" sx={{ paddingTop: 4, paddingBottom: 4 }}>
       {categories.map(category => (
         <Box key={category._id} sx={{ marginBottom: 4, position: 'relative' }}>
@@ -120,8 +122,8 @@ const Home = () => {
         </Box>
       ))}
       <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, marginTop: 4 }}>
-        <Button variant="contained" color="primary" onClick={() => setOpenAddProductDialog(true)}>Add Product</Button>
-        <Button variant="contained" color="secondary" onClick={() => setOpenAddCategoryDialog(true)}>Add Category</Button>
+        <Button variant="contained" style={{ backgroundColor: "black", color: "#ffffff" }} onClick={() => setOpenAddProductDialog(true)}>Add Product</Button>
+        <Button variant="contained" style={{ backgroundColor: "black", color: "#ffffff" }} onClick={() => setOpenAddCategoryDialog(true)}>Add Category</Button>
       </Box>
       <Dialog open={openAddProductDialog} onClose={() => setOpenAddProductDialog(false)}>
         <DialogTitle>Add Product</DialogTitle>
@@ -154,10 +156,11 @@ const Home = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpenAddCategoryDialog(false)} color="secondary">Cancel</Button>
-          <Button onClick={handleAddCategory} variant="contained" color="primary">Add</Button>
+          <Button style={{ backgroundColor: "black", color: "#ffffff" }} onClick={handleAddCategory} variant="contained" >Add</Button>
         </DialogActions>
       </Dialog>
     </Container>
+    </div>
   );
 };
 

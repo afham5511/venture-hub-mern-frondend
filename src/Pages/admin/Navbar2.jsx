@@ -1,4 +1,4 @@
-import { AppBar, Button, createTheme, ThemeProvider, Toolbar } from '@mui/material'
+import { AppBar, Button, createTheme, ThemeProvider, Toolbar, Typography } from '@mui/material'
 
 import React from 'react'
 import { Link } from 'react-router'
@@ -10,16 +10,16 @@ const darkTheme = createTheme({
 
 const Navbar2 = () => {
   return ( 
-    <ThemeProvider theme={darkTheme}>
-        <AppBar position='static'>
+    
+        <AppBar style={{backgroundColor:'black'}} >
         <Toolbar>
-            <Link to='/' style={{marginRight: 'auto'}}><Button style={{color:'white'}}>VH</Button></Link>
-            <Link to='/Product'><Button style={{color:'white'}}>Product</Button></Link>
-            <Link to='/Order'><Button style={{color:'white'}}>Order</Button></Link>
-            <Link to='/User'><Button style={{color:'white'}}>User</Button></Link>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{ color: "white", fontFamily: "fantasy" }}>VH.</Typography><br/><br/>
+            <Link to='/' style={{marginRight: 'auto'}}><Button style={{color:'white'}}></Button></Link>
+            <Link to='/Order'><Button style={{ color: "#ffffff" }}>Order</Button></Link>&nbsp;&nbsp;
+            <Link to='/User'><Button style={{  color: "#ffffff" }}>User</Button></Link>
         </Toolbar>
     </AppBar>
-    </ThemeProvider>
+   
   )
 }
 
