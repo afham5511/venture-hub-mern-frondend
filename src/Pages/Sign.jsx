@@ -21,11 +21,6 @@ const Sign = () => {
             <Button variant='contained'style={{backgroundColor:"black",color:"white"}}>Sign In</Button><br /><br />
            
                       <br /><br />
-      
-      
-  
-      
-    
     </div>
   )
 }

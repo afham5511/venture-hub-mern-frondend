@@ -23,9 +23,6 @@ function App() {
             <Route path="/Cart" element={<Cart/>}/>
             <Route path="/catogory/:id" element={<Catogory/>}/>
 
-
-
-
             <Route path='/h' element={<Adminhome />}></Route>
         <Route path='/Order' element={<Order />}></Route>
         <Route path='/User' element={<User />}></Route>

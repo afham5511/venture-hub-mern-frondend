@@ -61,7 +61,7 @@ function Home() {
                                         id={cat._id}
                                         dics={cat?.name || "dfhjk"}
                                         imageUrl={cat?.items[0]?.imageUrl1 || 'https://placehold.co/600x400'}
-                                        title={cat.q || "Description"}
+                                        title={cat.description || "Description"}
                                     />
                                 );
                             })}

@@ -19,6 +19,9 @@ const Login = () => {
         if(data.user){
           await localStorage.setItem('@Auth',JSON.stringify(data.user))
           setUser(data.user)
+          if(data.user.role=='admin'){
+            window.location.href = '/admin'
+          }
           window.location.href = '/';
         }
       })

@@ -9,13 +9,14 @@ function Catogory() {
     const { axiosInstance } = useAuth()
 
     const [catogorys, setcatogory] = useState([{ title: 'Adidas Gazzelle', strikeprice: 13520, description: 'ADIDAS ORIGINALS', price: 7799, imageUrl1: 'https://i.postimg.cc/nhZNSysv/pixelcut-export.png', }])
+
     useEffect(() => {
         const handleGetCategory = async () => {
             try {
-                const instance = await axiosInstance()
-                const { data, status } = await instance.get(`/categories/${id}`)
+                const { data, status } = await axiosInstance.get(`/categories/${id}`)
                 if (data) {
-                    setcatogory(data)
+                    console.log(data.items);
+                    setcatogory(data.items)
                 }
             } catch (error) {
                 console.error(error);
@@ -23,30 +24,33 @@ function Catogory() {
             }
         }
         handleGetCategory()
-    }, [])
+    }, [id])  // Make sure to add `id` as a dependency so it fetches when the category changes
+
     return (
         <div>
             <Navbar1 />
             <br /><br /> <br /><br />
-            <div style={{ display: 'flex', justifyContent: "space-evenly", }} >
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: "space-evenly", }}>
 
                 {catogorys.map(catogory => {
-
-                    <div >
-
-                        <img src={catogory.imageUrl1} width="90%" alt="" />&nbsp;&nbsp;<br /><br />
-                        <div style={{ fontSize: "20px" }}>
-                            <p>{catogory.title}</p>
-                            <div style={{ color: "gray", fontFamily: 'monospace' }}>
-                                <p>{catogory.description}</p>
-                            </div></div>
-                        ₹{new Intl.NumberFormat('en-IN').format(Number(catogory.price))}
-                        <div style={{ color: "gray", fontSize: "15px" }}>
-                            <p><s> ₹{new Intl.NumberFormat('en-IN').format(Number(catogory.strikeprice))}</s></p>
+                    // Ensure that JSX elements are returned
+                    return (
+                        <div key={catogory.title} style={{ width: '250px', textAlign: 'center', margin: '10px' }} onClick={()=>window.location.href=`/catogory/${id}/product/${catogory._id}`}>
+                            <img src={catogory.imageUrl1} width="90%" alt={catogory.title} />
+                            <br /><br />
+                            <div style={{ fontSize: "20px" }}>
+                                <p>{catogory.title}</p>
+                                <div style={{ color: "gray", fontFamily: 'monospace' }}>
+                                    <p>{catogory.description}</p>
+                                </div>
+                            </div>
+                            ₹{new Intl.NumberFormat('en-IN').format(Number(catogory.price))}
+                            <div style={{ color: "gray", fontSize: "15px" }}>
+                                <p><s> ₹{new Intl.NumberFormat('en-IN').format(Number(catogory.strikeprice))}</s></p>
+                            </div>
                         </div>
-                    </div>
+                    )
                 })}
-
 
             </div>
         </div>

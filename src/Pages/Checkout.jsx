@@ -1,14 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar1 from '../components/Navbar1';
 
 import { Button, Input, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@mui/material';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 function Checkout() {
-    const { id } = useParams()
+    const location = useLocation();
+    const product = location.state?.product; // Access the product passed via state
     const [checkout, setcheckout] = useState({ subtotal:9695, total: 9695 })
-    console.log(id);
-  return (
+    useEffect(()=>{
+      if(product){
+        setcheckout({subtotal:product.price, total: product.price })
+      }
+    },[location])
+    console.log(product, checkout);
+    
+    return (
     <div>
         <Navbar1/>
         <br/><br/><br/>
