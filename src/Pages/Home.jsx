@@ -32,7 +32,8 @@ function Home() {
                         <br /><br />
 
                         <div style={{ backgroundColor: "white", float: "right" }}>
-                            <h2 style={{ color: "black", float: "right", paddingTop: "400px", paddingRight: "130px" }}>
+                            <h2 style={{ color: "black", float: "right", paddingTop: "300px", paddingRight: "130px" }}>
+                               <div style={{fontWeight:"bolder", font:""}}><h1>VENTURE-HUB</h1>  <br /></div>
                                 Up to 60% OFF
                                 <div style={{ fontSize: "35px", fontFamily: 'monospace' }}>Live: Final Sale.</div>
                                 <div className='a'>Wardrobe Essential with endless comfort.</div><br />
@@ -42,7 +43,8 @@ function Home() {
                             </h2><br />
                             <div style={{ width: "100vw", paddingBottom: "50px" }}>
                                 <img src="https://i.postimg.cc/TYtQCqW5/pixelcut-export.jpg" width="50%" />
-                                <br /><br /><br /><br /><br /><br /><br />
+
+''                                <br /><br /><br /><br /><br /><br /><br />
                             </div>
                         </div>
 
@@ -61,7 +63,7 @@ function Home() {
                                         id={cat._id}
                                         dics={cat?.name || "dfhjk"}
                                         imageUrl={cat?.items[0]?.imageUrl1 || 'https://placehold.co/600x400'}
-                                        title={cat.description || "Description"}
+                                
                                     />
                                 );
                             })}

@@ -17,6 +17,7 @@ function Cart() {
 
      <div style={{ float: "left"}}>
      <img src={cart.imageUrl1}  width="50%"  alt="" style={{ float: "left", }} />&nbsp;&nbsp;
+                 <div>
                     <div style={{ fontSize: "20px" }}>
                         <p>{cart.title}</p>
                         <div style={{color:"gray", fontFamily: 'monospace'}}>
@@ -30,8 +31,8 @@ function Cart() {
                         </div>
                         <div style={{ fontFamily: 'monospace',fontSize:"18px" }}>
                         <p>ONLY ONE LEFT!</p>
-                       
                         <Button>Remove from Bag</Button>
+                        </div>
 </div>
                     </div>
 </div>

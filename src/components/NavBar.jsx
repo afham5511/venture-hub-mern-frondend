@@ -34,10 +34,6 @@ export default function Navbar() {
           <Button  onClick={()=>(window.location.href='/Cart')}>
             <ShoppingCartIcon></ShoppingCartIcon>
           </Button>
-          <Button color='white' onClick={()=>(window.location.href='/h')}>
-
-          </Button>
-
           <Button
             id="fade-button"
             aria-controls={open ? 'fade-menu' : undefined}

@@ -80,7 +80,8 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar2></Navbar2>
+      
+      <Navbar2></Navbar2><br/><br/>
     <Container maxWidth="lg" sx={{ paddingTop: 4, paddingBottom: 4 }}>
       {categories.map(category => (
         <Box key={category._id} sx={{ marginBottom: 4, position: 'relative' }}>

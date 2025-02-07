@@ -24,7 +24,7 @@ function Catogory() {
             }
         }
         handleGetCategory()
-    }, [id])  // Make sure to add `id` as a dependency so it fetches when the category changes
+    }, [id]) 
 
     return (
         <div>

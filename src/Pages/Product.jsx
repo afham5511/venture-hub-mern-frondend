@@ -36,8 +36,8 @@ function Product() {
                 <div style={{ flex: 2, display: 'flex', justifyContent: 'space-between', flexDirection: 'row', }}>
                     <img src={product.imageUrl1} width="50%" alt="" style={{ float: "left", }} />
                     <div style={{ flex: 1, display: 'flex', justifyContent: 'space-between', flexDirection: 'column' }}>
-                        <img src={product.imageUrl3} alt="" width="65%" />
-                        <img src={product.imageUrl2} alt="" width="65%" />
+                        <img src={product.imageUrl3} alt="" width="53%" />
+                        <img src={product.imageUrl2} alt="" width="53%" />
                     </div>
                 </div>
 

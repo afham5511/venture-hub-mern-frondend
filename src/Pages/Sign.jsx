@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Container, TextField } from '@mui/material'
-import Navbar1 from '../components/Navbar1'
+import Navbar3 from './Navbar3'
 const Sign = () => {
   return (
     
@@ -8,7 +8,7 @@ const Sign = () => {
        <h1><center>VENTURE HUB.</center></h1><br /><br />
      <h3><center>SIGN IN </center></h3>
    
-      <Navbar1></Navbar1>
+      <Navbar3></Navbar3>
        
             <br /><br />
             <TextField variant='outlined'label="FIRST NAME"style={{backgroundColor:"white",borderRadius:"10px",fontFamily:"cursive"}} />

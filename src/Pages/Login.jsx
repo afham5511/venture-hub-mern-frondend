@@ -1,8 +1,7 @@
 import { Button, TextField } from '@mui/material';
 import React, { useContext, useState } from 'react';
-
-import Navbar1 from '../components/Navbar1';
 import { useAuth } from '../Contexts/AuthContext';
+import Navbar3 from './Navbar3';
 
 const Login = () => {
   const [phoneNumber, setPhoneNumber] = useState('')
@@ -19,9 +18,11 @@ const Login = () => {
         if(data.user){
           await localStorage.setItem('@Auth',JSON.stringify(data.user))
           setUser(data.user)
+          console.log(data.user);
+          
           if(data.user.role=='admin'){
             window.location.href = '/admin'
-          }
+          }else
           window.location.href = '/';
         }
       })
@@ -33,7 +34,7 @@ const Login = () => {
   return (
 
     <div className='container'>
-      <Navbar1></Navbar1>
+      <Navbar3></Navbar3>
 
       <div style={{ flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center', width:'100vw', display:'flex' }}>
         <div style={{width:'30vw'}}>
