@@ -16,7 +16,7 @@ const Home = () => {
   const [newCategoryName, setNewCategoryName] = useState('');
   const [edit,setEdit]  = useState(false)
   
-  const {setUser, axiosInstance } = useAuth()
+  const { axiosInstance } = useAuth()
 
   useEffect(() => {
     axiosInstance.get(`/categories`)

@@ -1,11 +1,11 @@
-import { Button } from '@mui/material';
+import { Alert, Button } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Navbar1 from '../components/Navbar1';
 import { useAuth } from '../Contexts/AuthContext';
 
 function Product() {
-    const { axiosInstance } = useAuth();
+    const { axiosInstance, user } = useAuth();
     const navigate = useNavigate();
     const { id, catogoryId } = useParams()
     const [product, setproduct] = useState({ title: 'NIKE SB Dunk Low London', strikeprice: 12960, description: 'Soft Grey Magnet', price: 9695, imageUrl1: 'https://i.postimg.cc/FFqVNWz4/pixelcut-export-8.jpg', imageUrl2: 'https://i.postimg.cc/Nj6mw2gc/pixelcut-export-9.jpg', imageUrl3: 'https://i.postimg.cc/c1w65g0M/pixelcut-export-10.jpg' })
@@ -25,6 +25,21 @@ function Product() {
         handleGetCategory()
     }, [id])
 
+    async function handleAddToCart(){
+        try {
+            const { data, status } = await axiosInstance.post(`/product/cart`,{
+                product:id,
+                catogoryId: catogoryId,
+                userId: user._id
+            })
+
+                Alert('Added succeffully')
+
+        } catch (error) {
+            console.error(error);
+            Alert("error")
+        }
+    }
     return (
         <div>
             <Navbar1 />
@@ -57,7 +72,7 @@ function Product() {
                         <p>Final Sale {`${Math.round((1 - product.price / product.strikeprice) * 100)}%`} OFF.</p>
                     </div>
                     <br></br>
-                    <Button variant='contained' style={{ backgroundColor: "black", color: "#ffffff" }} >
+                    <Button variant='contained' style={{ backgroundColor: "black", color: "#ffffff" }} onClick={handleAddToCart}>
                         Add to cart
                     </Button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Button variant='contained' style={{ backgroundColor: "black", color: "#ffffff" }} onClick={() => (navigate('/checkout', { state: { product } }))}>
