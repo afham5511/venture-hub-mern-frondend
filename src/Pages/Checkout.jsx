@@ -6,7 +6,7 @@ import { useLocation, useParams } from 'react-router-dom';
 
 function Checkout() {
     const location = useLocation();
-    const product = location.state?.product; // Access the product passed via state
+    const product = location.state?.product; 
     const [checkout, setcheckout] = useState({ subtotal:9695, total: 9695 })
     useEffect(()=>{
       if(product){

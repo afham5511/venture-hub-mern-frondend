@@ -6,7 +6,7 @@ import { useAuth } from '../Contexts/AuthContext';
 
 function Cart() {
     const { axiosInstance, user } = useAuth()
-    const [carts, setCarts] = useState([]); // Start with an empty array for the carts state
+    const [carts, setCarts] = useState([]); 
     const [subtotal, setSubtotal] = useState(0);
     const [total, setTotal] = useState(0);
 
@@ -17,9 +17,9 @@ function Cart() {
             if (data) {
                 setCarts(data.products);
 
-                // Calculate subtotal and total
+            
                 const calcSubtotal = data.products.reduce((acc, product) => acc + (product.price * product.qty), 0);
-                const calcTotal = calcSubtotal; // For now, you can add other calculations like taxes/shipping if needed
+                const calcTotal = calcSubtotal; 
                 setSubtotal(calcSubtotal);
                 setTotal(calcTotal);
             }
@@ -27,6 +27,19 @@ function Cart() {
         console.log(user);
         fetchData();
     }, [user, axiosInstance]);
+    const removeCartItem =async (productId) => {
+        console.log(productId);
+        
+        axiosInstance.delete(`product/cart/`,{
+            params:{
+                userId:user._id, productId 
+            }
+        })
+        .then(() => {
+          window.location.reload()
+        })
+        .catch(error => console.error("Error removing category:", error));
+    }
 
     return (
         <div>
@@ -43,7 +56,7 @@ function Cart() {
             {carts.length !== 0 ? (
                 carts.map(cartItem => (
                     <div style={{  marginBottom: "20px", width: "45%" }}>
-                        <img src={cartItem.imageUrl1} width="50%" alt="" style={{ float: "left" }} />
+                        <img src={cartItem.imageUrl1} width="50%" alt="" style={{ float: "left" ,marginRight:"50px"}} />
                         <div style={{ marginLeft: "50px" }}>
                             <div style={{ fontSize: "20px" }}>
                                 <p>{cartItem.title}</p>
@@ -59,7 +72,7 @@ function Cart() {
                                 </div>
                                 <div style={{ fontFamily: 'monospace', fontSize: "18px" }}>
                                     <p>ONLY ONE LEFT!</p>
-                                    <Button>Remove from Bag</Button>
+                                    <Button onClick={()=>removeCartItem(cartItem._id)}>Remove from Bag</Button>
                                 </div>
                             </div>
                         </div>

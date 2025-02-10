@@ -10,6 +10,8 @@ import Order from './Pages/admin/Order';
 import User from './Pages/admin/User';
 import Catogory from './Pages/Catogory';
 import Sign from './Pages/Sign';
+import Logout from './Pages/Logout';
+
 
 function App() {
     return (
@@ -26,7 +28,7 @@ function App() {
             <Route path='/admin' element={<Adminhome />}></Route>
         <Route path='/Order' element={<Order />}></Route>
         <Route path='/User' element={<User />}></Route>
-      
+        <Route path='/logout' element={<Logout/>}></Route>
 
 
           </Routes>
